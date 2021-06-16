@@ -100,8 +100,8 @@
         <asp:Panel ID="Panel1" runat="server" Height="149px" Width="251px" Font-Bold="True">
             <br />
             Cidades :<br />
-            <asp:CheckBoxList ID="CBLCidades" runat="server">
-            </asp:CheckBoxList>
+            <asp:RadioButtonList ID="RBLCidades" runat="server" AutoPostBack="True" OnSelectedIndexChanged="RBLCidades_SelectedIndexChanged">
+            </asp:RadioButtonList>
         </asp:Panel>
                 </td>
                 <td class="auto-style23">

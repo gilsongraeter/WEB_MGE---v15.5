@@ -33,13 +33,29 @@ namespace WEB_MGE
         // SNMP    ######################################################################################## - CARREGAMENTO DA PÁGINA
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Variaveis_Globais.PerfilUsuario == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
+
+            Response.Redirect("https://app.powerbi.com/reportEmbed?reportId=a4c6f0c5-fd3f-4587-a511-195afd4595bb&autoAuth=true&ctid=7ae98da6-62e8-4148-809a-50c04eaa31ab&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLWJyYXppbC1zb3V0aC1iLXByaW1hcnktcmVkaXJlY3QuYW5hbHlzaXMud2luZG93cy5uZXQvIn0%3D");
+
+            return;
+
             // GIULIANO PEDIU PARA DESABILITAR TEMPORARIAMENTE A INFORMAÇÃO DE LEITURA PERDIDA
             dnLeiPerdida.Visible = false;
                 
             // Verifica se o usuário é administrador
             if (Session["perfilConectado"].ToString() != "ADMIN")
             {
-                conexao = new MySqlConnection(Constantes.STRING_CONEXAO_TB_PAINEL);
+                if (Variaveis_Globais.Servidor)
+                {
+                    conexao = new MySqlConnection(Constantes.STRING_CONEXAO_TB_PAINEL_LOCAL);
+                }
+                else
+                {
+                    conexao = new MySqlConnection(Constantes.STRING_CONEXAO_TB_PAINEL);
+                }
                 string ComandoSQL = string.Format("SELECT * FROM TBPAINEL WHERE PROJETO = '{0}';", Session["projetoConectado"].ToString());
                 adapter = new MySqlDataAdapter(ComandoSQL, conexao);
                 adapter.Fill(dataSet);
@@ -404,7 +420,7 @@ namespace WEB_MGE
                                                         + valor9 + ","
                                                         + valor10 + ")";
 
-            Page.ClientScript.RegisterClientScriptInclude("FormScript", "scripts/Default.js");
+            Page.ClientScript.RegisterClientScriptInclude("FormScript", "/scripts/Default.js");
             ScriptManager.RegisterClientScriptBlock(Page, Page.GetType(), "mensagem", rotinaJavaScript, true);
         }
 

@@ -20,7 +20,8 @@
             height: 70px;
             width: 156px;
         }
-        .auto-style1 {            height: 52px;
+        .auto-style1 {            
+            height: 52px;
         }
         .auto-style16 {
             width: 1321px;
@@ -69,9 +70,9 @@
     
         &nbsp;</div>
           </div>
-            <script src ="scripts/MapaAuxiliar.js"></script>
+            <script type="text/javascript" src="scripts/Map<%= (Request.UserHostAddress == "::1")?"LOCAL":Request.UserHostAddress %>.js"></script>
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYbfpYyLzUZml_kR1LAaGB4-EaZRJHeKM&callback=initialize">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYbfpYyLzUZml_kR1LAaGB4-EaZRJHeKM&callback=initialize"> -->
     </script>
       </form>
   </body>

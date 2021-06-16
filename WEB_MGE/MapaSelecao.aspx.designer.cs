@@ -40,13 +40,13 @@ namespace WEB_MGE {
         protected global::System.Web.UI.WebControls.Panel Panel1;
         
         /// <summary>
-        /// CBLCidades control.
+        /// RBLCidades control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList CBLCidades;
+        protected global::System.Web.UI.WebControls.RadioButtonList RBLCidades;
         
         /// <summary>
         /// Panel8 control.

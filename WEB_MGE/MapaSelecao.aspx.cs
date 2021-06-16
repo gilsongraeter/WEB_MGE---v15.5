@@ -15,6 +15,7 @@ namespace WEB_MGE
 
         private int i;
         private int NumeroCidadesSelecionadas = 0;
+        private int NumeroClassesSelecionadas = 0;
         private string CmdAux = "";
 
         MySqlConnection conexao = null;
@@ -25,13 +26,56 @@ namespace WEB_MGE
         ListBox LatitudeCelulares = new ListBox();
         ListBox LongitudeCelulares = new ListBox();
         ListBox DataHoraCelulares = new ListBox();
+        ListBox ListaCidades = new ListBox();
         #endregion
 
         #region Eventos
         protected void Page_Load(object sender, EventArgs e)
         {
-            CBLCidades.Items.Clear();
-            conexao = new MySqlConnection("server = " + Constantes.ENDERECO_SERVIDOR + "; User ID = " + Constantes.USUARIO_DATABASE + "; database = " + Variaveis_Globais.Cliente + "; password = " + Constantes.SENHA_DATABASE);
+            if (Variaveis_Globais.PerfilUsuario == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
+            //Variaveis_Globais.Host = GetPublicIP();
+
+            Variaveis_Globais.Host = getEnderecoIP();
+            if (Variaveis_Globais.Host == "::1")
+            {
+                Variaveis_Globais.Host = "LOCAL";
+            }
+
+            //string NomeArquivoAux = Variaveis_Globais.DiretorioRaiz + "\\dados\\" + Variaveis_Globais.Host + ".txt";
+            string NomeArquivoAux = "D:\\MGE\\Devs\\WEB_MGE\\WEB_MGE - v15.5\\WEB_MGE\\dados\\" + Variaveis_Globais.Host + ".txt";
+
+            System.IO.TextWriter arquivoAux = null;
+
+            if (!System.IO.File.Exists(NomeArquivoAux))
+            {
+                System.IO.File.Create(NomeArquivoAux).Close();
+                arquivoAux = System.IO.File.AppendText(NomeArquivoAux);
+                arquivoAux.WriteLine("Projeto = " + Session["projetoConectado"]);
+                arquivoAux.Close();
+            }
+            else
+            {
+                System.IO.File.OpenRead(NomeArquivoAux).Close();
+                String[] LinhasArquivo = System.IO.File.ReadAllLines(NomeArquivoAux);
+                if (LinhasArquivo[0].Substring(0, 7).ToString() == "Projeto")
+                {
+                    Variaveis_Globais.ProjetoAtual = LinhasArquivo[0].Substring(10, (LinhasArquivo[0].Length - 10));
+                    Variaveis_Globais.Cliente = Variaveis_Globais.ProjetoAtual;
+                }
+            }
+
+            RBLCidades.Items.Clear();
+            if (Variaveis_Globais.Servidor)
+            {
+                conexao = new MySqlConnection("server = " + Constantes.ENDERECO_SERVIDOR_LOCAL + "; User ID = " + Constantes.USUARIO_DATABASE + "; database = " + Variaveis_Globais.Cliente + "; password = " + Constantes.SENHA_DATABASE);
+            }
+            else
+            {
+                conexao = new MySqlConnection("server = " + Constantes.ENDERECO_SERVIDOR + "; User ID = " + Constantes.USUARIO_DATABASE + "; database = " + Variaveis_Globais.Cliente + "; password = " + Constantes.SENHA_DATABASE);
+            }
             adapter = new MySqlDataAdapter(string.Format("SELECT DISTINCT CIDADE_CONSUMIDOR FROM TBCADASTRO ORDER BY CIDADE_CONSUMIDOR ASC;"), conexao);
             adapter.Fill(dataSet);
 
@@ -39,7 +83,7 @@ namespace WEB_MGE
             {
                 if(dataSet.Tables[0].Rows[i][Constantes.CIDADE_CONSUMIDOR].ToString() != "")
                 {
-                    CBLCidades.Items.Add(dataSet.Tables[0].Rows[i][Constantes.CIDADE_CONSUMIDOR].ToString());
+                    RBLCidades.Items.Add(dataSet.Tables[0].Rows[i][Constantes.CIDADE_CONSUMIDOR].ToString());
                 }
             }
 
@@ -185,7 +229,14 @@ namespace WEB_MGE
             LatitudeCelulares.Items.Clear();
             LongitudeCelulares.Items.Clear();
             DataHoraCelulares.Items.Clear();
-            conexao = new MySqlConnection("server = " + Constantes.ENDERECO_SERVIDOR + "; User ID = " + Constantes.USUARIO_DATABASE + "; database = " + Constantes.DATABASE_TB_PAINEL + "; password = " + Constantes.SENHA_DATABASE);
+            if (Variaveis_Globais.Servidor)
+            {
+                conexao = new MySqlConnection("server = " + Constantes.ENDERECO_SERVIDOR_LOCAL + "; User ID = " + Constantes.USUARIO_DATABASE + "; database = " + Constantes.DATABASE_TB_PAINEL + "; password = " + Constantes.SENHA_DATABASE);
+            }
+            else
+            {
+                conexao = new MySqlConnection("server = " + Constantes.ENDERECO_SERVIDOR + "; User ID = " + Constantes.USUARIO_DATABASE + "; database = " + Constantes.DATABASE_TB_PAINEL + "; password = " + Constantes.SENHA_DATABASE);
+            }
             adapter = new MySqlDataAdapter(string.Format("SELECT * FROM CELULARES;"), conexao);
             adapter.Fill(dataSet);
             for (i = 0; i < dataSet.Tables[0].Rows.Count; i++)
@@ -211,49 +262,129 @@ namespace WEB_MGE
                 }
             }
 
+            //Variaveis_Globais.Host = GetPublicIP();
+            Variaveis_Globais.Host = getEnderecoIP();
+            if (Variaveis_Globais.Host == "::1")
+            {
+                Variaveis_Globais.Host = "LOCAL";
+            }
+
+            //string NomeArquivoAux = Variaveis_Globais.DiretorioRaiz + "\\dados\\" + Variaveis_Globais.Host + ".txt";
+            string NomeArquivoAux = "D:\\MGE\\Devs\\WEB_MGE\\WEB_MGE - v15.5\\WEB_MGE\\dados\\" + Variaveis_Globais.Host + ".txt";
+
+            System.IO.TextWriter arquivoAux = null;
+
+            if (!System.IO.File.Exists(NomeArquivoAux))
+            {
+                System.IO.File.Create(NomeArquivoAux).Close();
+                arquivoAux = System.IO.File.AppendText(NomeArquivoAux);
+                arquivoAux.WriteLine("Projeto = " + Session["projetoConectado"]);
+                arquivoAux.Close();
+            }
+            else
+            {
+                System.IO.File.OpenRead(NomeArquivoAux).Close();
+                String[] LinhasArquivo = System.IO.File.ReadAllLines(NomeArquivoAux);
+                if (LinhasArquivo[0].Substring(0, 7).ToString() == "Projeto")
+                {
+                    Variaveis_Globais.ProjetoAtual = LinhasArquivo[0].Substring(10, (LinhasArquivo[0].Length - 10));
+                    Variaveis_Globais.Cliente = Variaveis_Globais.ProjetoAtual;
+                }
+            }
+
             adapter = null;
             dataSet.Clear();
 
-            conexao = new MySqlConnection("server = " + Constantes.ENDERECO_SERVIDOR + "; User ID = " + Constantes.USUARIO_DATABASE + "; database = " + Variaveis_Globais.Cliente + "; password = " + Constantes.SENHA_DATABASE);
-
-            for (i = 0; i < CBLCidades.Items.Count; i++)
+            if (Variaveis_Globais.Servidor)
             {
-                if (CBLCidades.Items[i].Selected)
+                conexao = new MySqlConnection("server = " + Constantes.ENDERECO_SERVIDOR_LOCAL + "; User ID = " + Constantes.USUARIO_DATABASE + "; database = " + Variaveis_Globais.Cliente + "; password = " + Constantes.SENHA_DATABASE);
+            }
+            else
+            {
+                conexao = new MySqlConnection("server = " + Constantes.ENDERECO_SERVIDOR + "; User ID = " + Constantes.USUARIO_DATABASE + "; database = " + Variaveis_Globais.Cliente + "; password = " + Constantes.SENHA_DATABASE);
+            }
+
+            for (i = 0; i < RBLCidades.Items.Count; i++)
+            {
+                if (RBLCidades.Items[i].Selected)
                 {
                     NumeroCidadesSelecionadas++;
                 }
             }
-            NumeroCidadesSelecionadas = 3;
-            CBLCidades.Items[3].Selected = true;
-            CBLCidades.Items[4].Selected = true;
-            CBLCidades.Items[6].Selected = true;
+
+            for (i = 0; i < CBLClasse.Items.Count; i++)
+            {
+                if (CBLClasse.Items[i].Selected)
+                {
+                    NumeroClassesSelecionadas++;
+                }
+            }
 
             conexao = null;
             adapter = null;
             dataSet.Clear();
 
-            conexao = new MySqlConnection("server = " + Constantes.ENDERECO_SERVIDOR + "; User ID = " + Constantes.USUARIO_DATABASE + "; database = " + Variaveis_Globais.Cliente + "; password = " + Constantes.SENHA_DATABASE);
-            CmdAux = "SELECT * FROM TBCADASTRO ";
-            if(NumeroCidadesSelecionadas > 0)
+            if (Variaveis_Globais.Servidor)
             {
-                CmdAux = CmdAux + "WHERE ";
-                for (i = 0; i < CBLCidades.Items.Count; i++)
+                conexao = new MySqlConnection("server = " + Constantes.ENDERECO_SERVIDOR_LOCAL + "; User ID = " + Constantes.USUARIO_DATABASE + "; database = " + Variaveis_Globais.Cliente + "; password = " + Constantes.SENHA_DATABASE);
+            }
+            else
+            {
+                conexao = new MySqlConnection("server = " + Constantes.ENDERECO_SERVIDOR + "; User ID = " + Constantes.USUARIO_DATABASE + "; database = " + Variaveis_Globais.Cliente + "; password = " + Constantes.SENHA_DATABASE);
+            }
+
+            if((NumeroCidadesSelecionadas > 0)||(NumeroClassesSelecionadas > 0))
+            {
+                CmdAux = "SELECT * FROM TBCADASTRO WHERE (";
+            }
+            else
+            {
+                CmdAux = "SELECT * FROM TBCADASTRO ";
+            }
+
+            if (NumeroCidadesSelecionadas > 0)
+            {
+                for (i = 0; i < RBLCidades.Items.Count; i++)
                 {
-                    if (CBLCidades.Items[i].Selected)
+                    if (RBLCidades.Items[i].Selected)
                     {
-                        if (i == CBLCidades.SelectedIndex)
+                        if (i == RBLCidades.SelectedIndex)
                         {
-                            CmdAux = CmdAux + "((CIDADE_CONSUMIDOR = '" + CBLCidades.Items[i].Text.ToString() + "')";
+                            CmdAux = CmdAux + "(CIDADE_CONSUMIDOR = '" + RBLCidades.Items[i].Text.ToString() + "')";
                         }
                         else
                         {
-                            CmdAux = CmdAux + " OR (CIDADE_CONSUMIDOR = '" + CBLCidades.Items[i].Text.ToString() + "')";
+                            CmdAux = CmdAux + " OR (CIDADE_CONSUMIDOR = '" + RBLCidades.Items[i].Text.ToString() + "')";
+                        }
+                    }
+                }
+            }
+
+            if (NumeroClassesSelecionadas > 0)
+            {
+                if(NumeroCidadesSelecionadas > 0)
+                {
+                    CmdAux = CmdAux + "AND ";
+                }
+
+                for (i = 0; i < CBLClasse.Items.Count; i++)
+                {
+                    if (CBLClasse.Items[i].Selected)
+                    {
+                        if (i == CBLClasse.SelectedIndex)
+                        {
+                            CmdAux = CmdAux + "(CLASSE_CONSUMIDOR = '" + CBLClasse.Items[i].Text.ToString() + "')";
+                        }
+                        else
+                        {
+                            CmdAux = CmdAux + " OR (CLASSE_CONSUMIDOR = '" + CBLClasse.Items[i].Text.ToString() + "')";
                         }
                     }
                 }
                 CmdAux = CmdAux + ")";
-                CmdAux = CmdAux + " ORDER BY GRUPO, POSICAO;";             
             }
+            CmdAux = CmdAux + ")";
+            CmdAux = CmdAux + " ORDER BY GRUPO, POSICAO;";
             adapter = new MySqlDataAdapter(string.Format(CmdAux), conexao);
             adapter.Fill(dataSet);
 
@@ -264,9 +395,10 @@ namespace WEB_MGE
 
             try
             {
-                //DiretorioAtual = "C:\\MGE\\T.I\\Desenvolvimento\\WEB_MGE\\WEB_MGE - v14\\WEB_MGE\\scripts";
-                DiretorioAtual = "C:\\FTP\\WEB_MGE\\scripts";
-                Maps = System.IO.File.Open(@DiretorioAtual + "\\MapaAuxiliar.js", System.IO.FileMode.Create);
+                //DiretorioAtual = Variaveis_Globais.DiretorioRaiz + "\\scripts";
+                DiretorioAtual = "D:\\MGE\\Devs\\WEB_MGE\\WEB_MGE - v15.5\\WEB_MGE\\scripts";
+
+                Maps = System.IO.File.Open(@DiretorioAtual + "\\Map" + Variaveis_Globais.Host + ".js", System.IO.FileMode.Create);
                 ArquivoMapa = new System.IO.StreamWriter(Maps);
                 ArquivoMapa.WriteLine("function initialize() {");
                 //for (i = 0; i < dataSet.Tables[0].Rows.Count; i++)
@@ -474,6 +606,28 @@ namespace WEB_MGE
             
             Response.Redirect("Mapa.aspx");
         }
+
+        protected string getEnderecoIP()
+        {
+            string strEnderecoIP;
+            strEnderecoIP = Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
+            if (strEnderecoIP == null)
+                strEnderecoIP = Request.ServerVariables["REMOTE_ADDR"];
+
+            return strEnderecoIP;
+        }
         #endregion
+
+        protected void CBLCidades_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
+
+        protected void RBLCidades_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (RBLCidades.Items[0].Selected)
+            {
+                RBLCidades.Items[0].Selected = true;
+            }
+        }
     }
 }

@@ -8,6 +8,10 @@ namespace WEB_MGE
         #region Eventos
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Variaveis_Globais.PerfilUsuario == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
         }
 
         protected void projetoClick(object sender, EventArgs e)
@@ -15,8 +19,31 @@ namespace WEB_MGE
             Button botaoClicado = sender as Button;
 
             Session["projetoConectado"] = botaoClicado.Text;
+            Variaveis_Globais.ProjetoAtual = Session["projetoConectado"].ToString();
             Session["perfilConectado"] = "USU";
-            Response.Redirect("Default.aspx");
+
+            //string NomeArquivoAux = Variaveis_Globais.DiretorioRaiz + "\\dados\\" + Variaveis_Globais.Host + ".txt";
+            string NomeArquivoAux = "D:\\MGE\\Devs\\WEB_MGE\\WEB_MGE - v15.5\\WEB_MGE\\dados\\" + Variaveis_Globais.Host + ".txt";
+
+            System.IO.TextWriter arquivoAux = null;
+
+            if (!System.IO.File.Exists(NomeArquivoAux))
+            {
+                System.IO.File.Create(NomeArquivoAux).Close();
+                arquivoAux = System.IO.File.AppendText(NomeArquivoAux);
+                arquivoAux.WriteLine("Projeto = " + Session["projetoConectado"]);
+            }
+            else
+            {
+                System.IO.File.Delete(NomeArquivoAux);
+                System.IO.File.Create(NomeArquivoAux).Close();
+                arquivoAux = System.IO.File.AppendText(NomeArquivoAux);
+                arquivoAux.WriteLine("Projeto = " + Session["projetoConectado"]);
+            }
+            arquivoAux.Close();
+
+            //Response.Redirect("Default.aspx");
+            Response.Redirect("MapaSelecao.aspx");
         }
         #endregion
     }

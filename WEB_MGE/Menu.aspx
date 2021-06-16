@@ -23,12 +23,45 @@
 
         <div class="btn-group btn-group-justified" role="group" aria-label="...">
             <div class="btn-group" role="group">
-                <asp:Button id="Button0" OnClick="projetoClick" runat="server" Text="ELETROPAULO" tag="1" CssClass="btn btn-default"/>
+                <asp:Button id="Button0" OnClick="projetoClick" runat="server" Text="CERFOX2019" tag="1" CssClass="btn btn-default"/>
             </div>
             <div class="btn-group" role="group">
-                <asp:Button id="Button1" OnClick="projetoClick" runat="server" Text="ENELCE"  CssClass="btn btn-default"/>
+                <asp:Button id="Button1" OnClick="projetoClick" runat="server" Text="CERILUZ2019"  CssClass="btn btn-default"/>
+            </div>
+            <div class="btn-group" role="group">
+                <asp:Button id="Button2" OnClick="projetoClick" runat="server" Text="CERMISSOES2019"  CssClass="btn btn-default"/>
+            </div>
+            <div class="btn-group" role="group">
+                <asp:Button id="Button3" OnClick="projetoClick" runat="server" Text="CERTAJA2019"  CssClass="btn btn-default"/>
+            </div>
+            <div class="btn-group" role="group">
+                <asp:Button id="Button4" OnClick="projetoClick" runat="server" Text="CERTEL2019"  CssClass="btn btn-default"/>
+            </div>
+            <div class="btn-group" role="group">
+                <asp:Button id="Button5" OnClick="projetoClick" runat="server" Text="CERTHIL2019"  CssClass="btn btn-default"/>
             </div>
         </div>
+
+        <div class="btn-group btn-group-justified" role="group" aria-label="...">
+            <div class="btn-group" role="group">
+                <asp:Button id="Button6" OnClick="projetoClick" runat="server" Text="COOPERLUZ2019"  CssClass="btn btn-default"/>
+            </div>
+            <div class="btn-group" role="group">
+                <asp:Button id="Button7" OnClick="projetoClick" runat="server" Text="COOPERNORTE2019"  CssClass="btn btn-default"/>
+            </div>
+            <div class="btn-group" role="group">
+                <asp:Button id="Button8" OnClick="projetoClick" runat="server" Text="COPREL2019"  CssClass="btn btn-default"/>
+            </div>
+            <div class="btn-group" role="group">
+                <asp:Button id="Button9" OnClick="projetoClick" runat="server" Text="CRELUZ2019"  CssClass="btn btn-default"/>
+            </div>
+            <div class="btn-group" role="group">
+                <asp:Button id="Button10" OnClick="projetoClick" runat="server" Text="CRERAL2019"  CssClass="btn btn-default"/>
+            </div>
+            <div class="btn-group" role="group">
+                <asp:Button id="Button11" OnClick="projetoClick" runat="server" Text="CPFLSTACRUZ"  CssClass="btn btn-default"/>
+            </div>
+        </div>    
     </div>
     </form>
 </body>

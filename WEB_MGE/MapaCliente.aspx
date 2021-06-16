@@ -4,7 +4,9 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+	<!-- META -->
     <title></title>
+
     <style type="text/css">
         .auto-style1 {            height: 50px;
         }
@@ -30,7 +32,6 @@
         }
         .auto-style16 {
             width: 1321px;
-            height: 39px;
             margin-top: 3px;
         }
         .auto-style27 {
@@ -133,10 +134,8 @@
         <br />
         </div>
           </div>
-            <script src ="scripts/MapaAuxiliar.js"></script>            
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYbfpYyLzUZml_kR1LAaGB4-EaZRJHeKM&callback=initialize">
-    </script>
+            <script type="text/javascript" src="scripts/Map<%= (Request.UserHostAddress == "::1")?"LOCAL":Request.UserHostAddress %>.js"></script>
+            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYbfpYyLzUZml_kR1LAaGB4-EaZRJHeKM&callback=initialize"></script>
     </form>
 </body>
 </html>

@@ -9,6 +9,7 @@
 	    <meta charset="UTF-8">
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	    <meta name="description" content="" />
+        <meta http-equiv="refresh" content="180">
     
 	    <link rel="icon" href="images/icone.ico" type="image/x-icon">
 
@@ -17,8 +18,8 @@
 	    <link rel="stylesheet" href="styles/Table.css" type="text/css"/>		    
 
         <!-- Javascript -->            
-        <script src="scripts/Default.js"></script>
-        <script src="scripts/Chart.js"></script>
+        <script src="/scripts/Default.js"></script>
+        <script src="/scripts/Chart.js"></script>
 
         <style type="text/css">
             .auto-style1 {

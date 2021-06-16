@@ -18,6 +18,14 @@ namespace WEB_MGE
         private static string vUsuario;
         private static string vPerfilUsuario;
         private static string vUrl;
+        private static string vHost;
+        private static string vProjetoAtual;
+        private static string vUltimoProjeto;
+        private static string vUltimoMapa;
+        private static string vDiretorioRaiz;
+
+        private static bool vServidor;
+        private static bool vTrocaProjeto;
         #endregion
 
         #region Propriedade
@@ -74,6 +82,48 @@ namespace WEB_MGE
         {
             get { return vUrl; }
             set { vUrl = value; }
+        }
+
+        public static string Host
+        {
+            get { return vHost; }
+            set { vHost = value; }
+        }
+
+        public static string ProjetoAtual
+        {
+            get { return vProjetoAtual; }
+            set { vProjetoAtual = value; }
+        }
+
+        public static string UltimoProjeto
+        {
+            get { return vUltimoProjeto; }
+            set { vUltimoProjeto = value; }
+        }
+
+        public static string UltimoMapa
+        {
+            get { return vUltimoMapa; }
+            set { vUltimoMapa = value; }
+        }
+
+        public static string DiretorioRaiz
+        {
+            get { return vDiretorioRaiz; }
+            set { vDiretorioRaiz = value; }
+        }
+
+        public static bool Servidor
+        {
+            get { return vServidor; }
+            set { vServidor = value; }
+        }
+
+        public static bool TrocaProjeto
+        {
+            get { return vTrocaProjeto; }
+            set { vTrocaProjeto = value; }
         }
         #endregion
     }

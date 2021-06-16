@@ -3,7 +3,7 @@
     public class Constantes
     {
         // Constantes para acesso ao Banco de Dados da aplicação
-        // public const string ENDERECO_SERVIDOR   = "201.21.193.230";
+        public const string ENDERECO_SERVIDOR_LOCAL   = "192.168.0.29";
         public const string ENDERECO_SERVIDOR   = "mgers.dyndns.org";
         public const string DATABASE            = "DB_WEBMGE";
         public const string USUARIO_DATABASE    = "SYSDBA";
@@ -13,12 +13,21 @@
                                                     "; database=" + DATABASE + 
                                                     "; password=" + SENHA_DATABASE );
 
+        public const string STRING_CONEXAO_LOCAL = ("server=192.168.0.29" +  
+                                                    "; User Id=" + USUARIO_DATABASE +
+                                                    "; database=" + DATABASE +
+                                                    "; password=" + SENHA_DATABASE);
+
         public const string DATABASE_TB_PAINEL = "GERAL_SGE";
         public const string STRING_CONEXAO_TB_PAINEL = ("server=" + ENDERECO_SERVIDOR +
                                                         "; User Id=" + USUARIO_DATABASE +
                                                         "; database=" + DATABASE_TB_PAINEL +
                                                         "; password=" + SENHA_DATABASE);
 
+        public const string STRING_CONEXAO_TB_PAINEL_LOCAL = ("server=192.168.0.29" +
+                                                        "; User Id=" + USUARIO_DATABASE +
+                                                        "; database=" + DATABASE_TB_PAINEL +
+                                                        "; password=" + SENHA_DATABASE);
         public const string PROJETO = "projeto";
         public const string SERVICO = "servico";
         public const string AMOSTRA_RESIDENCIAL = "amostra_residencial";

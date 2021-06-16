@@ -17,8 +17,13 @@ namespace WEB_MGE
         #region Metodos
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Variaveis_Globais.PerfilUsuario == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
+
             Label1.Text = Variaveis_Globais.Cliente;
-            //Page.ClientScript.RegisterClientScriptInclude("FormScript", "scripts/MapaAuxiliar.js");
+            //Page.ClientScript.RegisterClientScriptInclude("FormScript", "scripts/Map.js");
             //ScriptManager.RegisterClientScriptBlock(Page, Page.GetType(), "mensagem", "teste", true);
 
         }
