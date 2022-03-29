@@ -38,8 +38,45 @@ namespace WEB_MGE
                 Response.Redirect("Login.aspx");
             }
 
-            Response.Redirect("https://app.powerbi.com/reportEmbed?reportId=a4c6f0c5-fd3f-4587-a511-195afd4595bb&autoAuth=true&ctid=7ae98da6-62e8-4148-809a-50c04eaa31ab&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLWJyYXppbC1zb3V0aC1iLXByaW1hcnktcmVkaXJlY3QuYW5hbHlzaXMud2luZG93cy5uZXQvIn0%3D");
+            switch(Variaveis_Globais.ProjetoAtual)
+            {
+                case "RGESUL2021":
+                    Response.Redirect("https://app.powerbi.com/view?r=eyJrIjoiZTdmNDQwMjUtZWM0Ny00MGZjLTg0NTMtNzM4YjM1ZDJmNzEwIiwidCI6IjdhZTk4ZGE2LTYyZTgtNDE0OC04MDlhLTUwYzA0ZWFhMzFhYiJ9");
+                    break;
+                case "CEMIG2021":
+                    Response.Redirect("https://app.powerbi.com/view?r=eyJrIjoiOWNkYjhhZDktNDYzZi00MDQ4LWE2YTctOGY4OTE2MTc3NjQzIiwidCI6IjdhZTk4ZGE2LTYyZTgtNDE0OC04MDlhLTUwYzA0ZWFhMzFhYiJ9");
+                    break;
+                case "EDPES2021":
+                    Response.Redirect("https://app.powerbi.com/view?r=eyJrIjoiNWRhYzYxZGUtYTA1OS00NTI2LWE0YmEtMzBiM2M2OWZiN2E1IiwidCI6IjdhZTk4ZGE2LTYyZTgtNDE0OC04MDlhLTUwYzA0ZWFhMzFhYiJ9");
+                    break;
+                case "CEMIGCM2021":
+                    Response.Redirect("https://app.powerbi.com/view?r=eyJrIjoiOWNkYjhhZDktNDYzZi00MDQ4LWE2YTctOGY4OTE2MTc3NjQzIiwidCI6IjdhZTk4ZGE2LTYyZTgtNDE0OC04MDlhLTUwYzA0ZWFhMzFhYiJ9&embedImagePlaceholder=true&pageName=ReportSection4c38b84a2631095de9a9");
+                    break;
+                case "equatorialbdgd2021":
+                    Response.Redirect("https://app.powerbi.com/view?r=eyJrIjoiYTBiNzNmNzItYWE4Ni00YzhjLTgyMTQtYjg1NGMxMzZmOTFkIiwidCI6IjdhZTk4ZGE2LTYyZTgtNDE0OC04MDlhLTUwYzA0ZWFhMzFhYiJ9");
+                    break;
+                case "HIDROPAN2021":
+                    Response.Redirect("https://app.powerbi.com/view?r=eyJrIjoiMWI5MDc4YWMtMWMwZC00MzI1LTk4OTAtYTZiZjBlNWMxYWQzIiwidCI6IjdhZTk4ZGE2LTYyZTgtNDE0OC04MDlhLTUwYzA0ZWFhMzFhYiJ9");
+                    break;
+                case "equatorialbdgdpi":
+                    Response.Redirect("https://app.powerbi.com/view?r=eyJrIjoiYmQ1ZDRiMjEtNzk3Mi00M2NjLWJhZGEtZDMxMzAwMTNlYWNjIiwidCI6IjdhZTk4ZGE2LTYyZTgtNDE0OC04MDlhLTUwYzA0ZWFhMzFhYiJ9");
+                    break;
+                case "equatorialbdgdal":
+                    Response.Redirect("https://app.powerbi.com/view?r=eyJrIjoiOWM0NWUzMWItMzZhOC00ZTBkLTgxNTMtYWQ2NWYwMjVhOWQ5IiwidCI6IjdhZTk4ZGE2LTYyZTgtNDE0OC04MDlhLTUwYzA0ZWFhMzFhYiJ9");
+                    break;
+                case "EDPES2021CLIENTES":
+                    Response.Redirect("https://app.powerbi.com/view?r=eyJrIjoiMTM1NWMzZWItYzAwMi00ZWNhLWIyZmQtZmFmNmUzNzk0NzkzIiwidCI6IjdhZTk4ZGE2LTYyZTgtNDE0OC04MDlhLTUwYzA0ZWFhMzFhYiJ9");
+                    break;
+                case "COELBA2022":
+                    Response.Redirect("https://app.powerbi.com/view?r=eyJrIjoiMmFiZjNmOGMtMmVlNi00OThmLWEwOWItOTU1NDc1YjMyY2NlIiwidCI6IjdhZTk4ZGE2LTYyZTgtNDE0OC04MDlhLTUwYzA0ZWFhMzFhYiJ9");
+                    break;
+                default:
+                    break;
 
+            }
+
+            //Response.Redirect("https://app.powerbi.com/reportEmbed?reportId=a4c6f0c5-fd3f-4587-a511-195afd4595bb&autoAuth=true&ctid=7ae98da6-62e8-4148-809a-50c04eaa31ab&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLWJyYXppbC1zb3V0aC1iLXByaW1hcnktcmVkaXJlY3QuYW5hbHlzaXMud2luZG93cy5uZXQvIn0%3D");
+            
             return;
 
             // GIULIANO PEDIU PARA DESABILITAR TEMPORARIAMENTE A INFORMAÇÃO DE LEITURA PERDIDA

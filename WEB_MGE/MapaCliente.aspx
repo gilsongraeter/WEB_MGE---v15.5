@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MapaCliente.aspx.cs" Inherits="WEB_MGE.MapaCliente" %>
+﻿   <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MapaCliente.aspx.cs" Inherits="WEB_MGE.MapaCliente" %>
 
 <!DOCTYPE html>
 

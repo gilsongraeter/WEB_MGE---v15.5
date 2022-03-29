@@ -22,8 +22,7 @@ namespace WEB_MGE
             Variaveis_Globais.ProjetoAtual = Session["projetoConectado"].ToString();
             Session["perfilConectado"] = "USU";
 
-            //string NomeArquivoAux = Variaveis_Globais.DiretorioRaiz + "\\dados\\" + Variaveis_Globais.Host + ".txt";
-            string NomeArquivoAux = "D:\\MGE\\Devs\\WEB_MGE\\WEB_MGE - v15.5\\WEB_MGE\\dados\\" + Variaveis_Globais.Host + ".txt";
+            string NomeArquivoAux = Variaveis_Globais.DiretorioRaiz + "\\dados\\" + Variaveis_Globais.Host + ".txt";
 
             System.IO.TextWriter arquivoAux = null;
 

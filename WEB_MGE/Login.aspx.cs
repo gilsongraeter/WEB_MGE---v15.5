@@ -68,8 +68,8 @@ namespace WEB_MGE
         protected void btnEnviar_Click(object sender, EventArgs e)
         {
             Variaveis_Globais.DiretorioRaiz = Server.MapPath("~/");
-            //string NomeArquivo = Variaveis_Globais.DiretorioRaiz + "\\dados\\Conexoes.txt";
-            string NomeArquivo = "D:\\MGE\\Devs\\WEB_MGE\\WEB_MGE - v15.5\\WEB_MGE\\dados\\Conexoes.txt";
+            string NomeArquivo = Variaveis_Globais.DiretorioRaiz + "\\dados\\Conexoes.txt";
+                    
 
             System.IO.TextWriter arquivo = null;
 
@@ -121,8 +121,7 @@ namespace WEB_MGE
                     //
                     //Variaveis_Globais.UltimoProjeto = Variaveis_Globais.ProjetoAtual;
 
-                    //string NomeArquivoAux = Variaveis_Globais.DiretorioRaiz + "\\dados\\" + Variaveis_Globais.Host + ".txt";
-                    string NomeArquivoAux = "D:\\MGE\\Devs\\WEB_MGE\\WEB_MGE - v15.5\\WEB_MGE\\dados\\" + Variaveis_Globais.Host + ".txt";
+                    string NomeArquivoAux = Variaveis_Globais.DiretorioRaiz + "\\dados\\" + Variaveis_Globais.Host + ".txt";
 
                     System.IO.TextWriter arquivoAux = null;
 
@@ -178,5 +177,7 @@ namespace WEB_MGE
             return strEnderecoIP;
         }
         #endregion
+
+
     }
 }
