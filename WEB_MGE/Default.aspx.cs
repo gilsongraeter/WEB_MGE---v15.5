@@ -70,6 +70,9 @@ namespace WEB_MGE
                 case "COELBA2022":
                     Response.Redirect("https://app.powerbi.com/view?r=eyJrIjoiMmFiZjNmOGMtMmVlNi00OThmLWEwOWItOTU1NDc1YjMyY2NlIiwidCI6IjdhZTk4ZGE2LTYyZTgtNDE0OC04MDlhLTUwYzA0ZWFhMzFhYiJ9");
                     break;
+                case "COSERN2022":
+                    Response.Redirect("https://app.powerbi.com/links/bQw5Tbfyty?ctid=7ae98da6-62e8-4148-809a-50c04eaa31ab&pbi_source=linkShare");
+                    break;
                 default:
                     break;
 
