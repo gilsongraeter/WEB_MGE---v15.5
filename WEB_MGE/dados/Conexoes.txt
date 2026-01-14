@@ -92,3 +92,231 @@ LOCAL - Projeto : equatorialbdgdal - 26/10/2021 13:42:55
 LOCAL - Projeto : equatorialbdgdal - 26/10/2021 13:44:14
 LOCAL - Projeto : EDPES2021CLIENTES - 27/12/2021 13:41:06
 LOCAL - Projeto : COELBA2022 - 29/03/2022 12:24:11
+127.0.0.1 - Projeto : AME2022 - 29/09/2023 10:46:14
+127.0.0.1 - Projeto : AME2022 - 29/09/2023 11:15:20
+127.0.0.1 - Projeto : AME2022 - 29/09/2023 11:30:01
+127.0.0.1 - Projeto : AME2022 - 29/09/2023 11:38:17
+127.0.0.1 - Projeto : AME2022 - 29/09/2023 16:30:45
+Host = 127.0.0.1
+
+ComandoSql = SELECT * FROM USUARIOS WHERE usuario = 'AME2022' AND senha = '123';
+
+Conexao = server=mgers.dyndns.org;user id=SYSDBA;database=DB_WEBMGE;password=masterkey
+
+127.0.0.1 - Projeto : AME2022 - 29/09/2023 16:38:49
+Arquivo = D:\MGE\Devs\WEB_MGE---v15.5\WEB_MGE\\dados\127.0.0.1.txt
+
+Host = 127.0.0.1
+
+ComandoSql = SELECT * FROM USUARIOS WHERE usuario = 'AME2022' AND senha = '123';
+
+Conexao = server=mgers.dyndns.org;user id=SYSDBA;database=DB_WEBMGE;password=masterkey
+
+127.0.0.1 - Projeto : AME2022 - 29/09/2023 16:44:41
+Arquivo = D:\MGE\Devs\WEB_MGE---v15.5\WEB_MGE\\dados\127.0.0.1.txt
+
+Host = 127.0.0.1
+
+ComandoSql = SELECT * FROM USUARIOS WHERE usuario = 'AME2022' AND senha = '123';
+
+Conexao = server=mgers.dyndns.org;user id=SYSDBA;database=DB_WEBMGE;password=masterkey
+
+127.0.0.1 - Projeto : AME2022 - 29/09/2023 16:49:43
+Arquivo = D:\MGE\Devs\WEB_MGE---v15.5\WEB_MGE\dados\127.0.0.1.txt
+
+Host = 127.0.0.1
+
+ComandoSql = SELECT * FROM USUARIOS WHERE usuario = 'AME2022' AND senha = '123';
+
+Conexao = server=mgers.dyndns.org;port=3306;user id=SYSDBA;database=DB_WEBMGE;password=masterkey
+
+127.0.0.1 - Projeto : AME2022 - 29/09/2023 17:38:34
+Arquivo = D:\MGE\Devs\WEB_MGE---v15.5\WEB_MGE\dados\127.0.0.1.txt
+
+Host = 127.0.0.1
+
+ComandoSql = SELECT * FROM USUARIOS WHERE usuario = 'AME2022' AND senha = '123';
+
+Conexao = server=mgers.dyndns.org;port=3306;user id=SGE;database=DB_WEBMGE;password=Xyzmge123
+
+127.0.0.1 - Projeto : AME2022 - 29/09/2023 18:14:50
+Arquivo = D:\MGE\Devs\WEB_MGE---v15.5\WEB_MGE\dados\127.0.0.1.txt
+
+Host = 127.0.0.1
+
+ComandoSql = SELECT * FROM USUARIOS WHERE usuario = 'AME2022' AND senha = '123';
+
+Conexao = server=mgers.dyndns.org;port=3306;user id=SGE;database=DB_WEBMGE;password=Xyzmge123
+
+Qtd dados lidos = 1
+
+127.0.0.1 - Projeto : AME2022 - 29/09/2023 18:23:55
+Arquivo = D:\MGE\Devs\WEB_MGE---v15.5\WEB_MGE\dados\127.0.0.1.txt
+
+Host = 127.0.0.1
+
+ComandoSql = SELECT * FROM USUARIOS WHERE usuario = 'AME2022' AND senha = '123';
+
+Conexao = server=mgers.dyndns.org;port=3306;user id=SGE;database=DB_WEBMGE;password=Xyzmge123
+
+Qtd dados lidos = 1
+
+Perfil Usuario = USU
+
+127.0.0.1 - Projeto : AME2022 - 29/09/2023 18:33:31
+Arquivo = D:\MGE\Devs\WEB_MGE---v15.5\WEB_MGE\dados\127.0.0.1.txt
+
+Host = 127.0.0.1
+
+ComandoSql = SELECT * FROM USUARIOS WHERE usuario = 'AME2022' AND senha = '123';
+
+Conexao = server=mgers.dyndns.org;port=3306;user id=SGE;database=DB_WEBMGE;password=Xyzmge123
+
+Qtd dados lidos = 1
+
+Perfil Usuario = USU
+
+127.0.0.1 - Projeto : AME2022 - 29/09/2023 18:35:43
+Arquivo = D:\MGE\Devs\WEB_MGE---v15.5\WEB_MGE\dados\127.0.0.1.txt
+
+Host = 127.0.0.1
+
+ComandoSql = SELECT * FROM USUARIOS WHERE usuario = 'AME2022' AND senha = '123';
+
+Conexao = server=mgers.dyndns.org;port=3306;user id=SGE;database=DB_WEBMGE;password=Xyzmge123
+
+Qtd dados lidos = 1
+
+Perfil Usuario = USU
+
+127.0.0.1 - Projeto : AME2022 - 29/09/2023 18:37:44
+Arquivo = D:\MGE\Devs\WEB_MGE---v15.5\WEB_MGE\dados\127.0.0.1.txt
+
+Host = 127.0.0.1
+
+ComandoSql = SELECT * FROM USUARIOS WHERE usuario = 'PIAUI2022' AND senha = '123';
+
+Conexao = server=mgers.dyndns.org;port=3306;user id=SGE;database=DB_WEBMGE;password=Xyzmge123
+
+Qtd dados lidos = 1
+
+Perfil Usuario = USU
+
+127.0.0.1 - Projeto : PIAUI2022 - 06/10/2023 14:21:57
+Arquivo = D:\MGE\Devs\WEB_MGE---v15.5\WEB_MGE\dados\127.0.0.1.txt
+
+Host = 127.0.0.1
+
+ComandoSql = SELECT * FROM USUARIOS WHERE usuario = 'ame022' AND senha = 'ame022';
+
+Conexao = server=mgers.dyndns.org;port=3306;user id=SGE;database=db_webmge;password=Xyzmge123
+
+Qtd dados lidos = 0
+
+Host = 127.0.0.1
+
+ComandoSql = SELECT * FROM USUARIOS WHERE usuario = 'ame2022' AND senha = 'ame2022';
+
+Conexao = server=mgers.dyndns.org;port=3306;user id=SGE;database=db_webmge;password=Xyzmge123
+
+Qtd dados lidos = 0
+
+Host = 127.0.0.1
+
+ComandoSql = SELECT * FROM USUARIOS WHERE usuario = 'ame2022' AND senha = '123';
+
+Conexao = server=mgers.dyndns.org;port=3306;user id=SGE;database=db_webmge;password=Xyzmge123
+
+Qtd dados lidos = 1
+
+Perfil Usuario = USU
+
+127.0.0.1 - Projeto : AME2022 - 29/12/2023 14:34:14
+Arquivo = D:\MGE\Devs\WEB_MGE---v15.5\WEB_MGE\dados\127.0.0.1.txt
+
+Host = 127.0.0.1
+
+ComandoSql = SELECT * FROM USUARIOS WHERE usuario = 'ame2022' AND senha = '113';
+
+Conexao = server=APPS01;port=1235;user id=SGE;database=db_webmge;password=Xyzmge123
+
+Qtd dados lidos = 0
+
+Host = 127.0.0.1
+
+ComandoSql = SELECT * FROM USUARIOS WHERE usuario = 'AME2022' AND senha = '123';
+
+Conexao = server=APPS01;port=1235;user id=SGE;database=db_webmge;password=Xyzmge123
+
+Qtd dados lidos = 1
+
+Perfil Usuario = USU
+
+127.0.0.1 - Projeto : AME2022 - 03/07/2024 08:16:35
+Arquivo = D:\MGE\Devs\WEB_MGE---v15.5\WEB_MGE\dados\127.0.0.1.txt
+
+Host = 127.0.0.1
+
+ComandoSql = SELECT * FROM USUARIOS WHERE usuario = 'neo2025' AND senha = '123';
+
+Conexao = server=APPS01;port=1235;user id=SGE;database=db_webmge;password=Xyzmge123
+
+Qtd dados lidos = 1
+
+Perfil Usuario = USU
+
+127.0.0.1 - Projeto : NEODF2025 - 08/10/2025 16:07:19
+Arquivo = D:\MGE\Devs\WEB_MGE---v15.5\WEB_MGE\dados\127.0.0.1.txt
+
+Host = 127.0.0.1
+
+ComandoSql = SELECT * FROM USUARIOS WHERE usuario = 'CPFL2025' AND senha = '123';
+
+Conexao = server=APPS01;port=1235;user id=SGE;database=db_webmge;password=Xyzmge123
+
+Qtd dados lidos = 1
+
+Perfil Usuario = USU
+
+127.0.0.1 - Projeto : CMCPFLPIRATININGA2025 - 09/10/2025 10:14:23
+Arquivo = D:\MGE\Devs\WEB_MGE---v15.5\WEB_MGE\dados\127.0.0.1.txt
+
+Host = 127.0.0.1
+
+ComandoSql = SELECT * FROM USUARIOS WHERE usuario = 'light2025' AND senha = '123';
+
+Conexao = server=APPS01;port=1235;user id=SGE;database=db_webmge;password=Xyzmge123
+
+Qtd dados lidos = 1
+
+Perfil Usuario = USU
+
+127.0.0.1 - Projeto : LIGHT2025 - 19/12/2025 15:08:24
+Arquivo = D:\MGE\Devs\WEB_MGE---v15.5\WEB_MGE\dados\127.0.0.1.txt
+
+Host = 127.0.0.1
+
+ComandoSql = SELECT * FROM USUARIOS WHERE usuario = 'cmcpflpiratininga2025' AND senha = '123';
+
+Conexao = server=APPS01;port=1235;user id=SGE;database=db_webmge;password=Xyzmge123
+
+Qtd dados lidos = 1
+
+Perfil Usuario = USU
+
+127.0.0.1 - Projeto : CMCPFLPIRATININGA2025 - 19/12/2025 15:08:46
+Arquivo = D:\MGE\Devs\WEB_MGE---v15.5\WEB_MGE\dados\127.0.0.1.txt
+
+Host = 127.0.0.1
+
+ComandoSql = SELECT * FROM USUARIOS WHERE usuario = 'LIGHT2025' AND senha = '123';
+
+Conexao = server=APPS01;port=1235;user id=SGE;database=db_webmge;password=Xyzmge123
+
+Qtd dados lidos = 1
+
+Perfil Usuario = USU
+
+127.0.0.1 - Projeto : LIGHT2025 - 06/01/2026 12:30:04
+Arquivo = D:\MGE\Devs\WEB_MGE---v15.5\WEB_MGE\dados\127.0.0.1.txt
+

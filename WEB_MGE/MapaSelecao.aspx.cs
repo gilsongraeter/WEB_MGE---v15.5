@@ -44,7 +44,7 @@ namespace WEB_MGE
                 Variaveis_Globais.Host = "LOCAL";
             }
 
-            string NomeArquivoAux = Variaveis_Globais.DiretorioRaiz + "\\dados\\" + Variaveis_Globais.Host + ".txt";
+            string NomeArquivoAux = Variaveis_Globais.DiretorioRaiz + "dados\\" + Variaveis_Globais.Host + ".txt";
 
             System.IO.TextWriter arquivoAux = null;
 
@@ -268,7 +268,7 @@ namespace WEB_MGE
                 Variaveis_Globais.Host = "LOCAL";
             }
 
-            string NomeArquivoAux = Variaveis_Globais.DiretorioRaiz + "\\dados\\" + Variaveis_Globais.Host + ".txt";
+            string NomeArquivoAux = Variaveis_Globais.DiretorioRaiz + "dados\\" + Variaveis_Globais.Host + ".txt";
 
             System.IO.TextWriter arquivoAux = null;
 

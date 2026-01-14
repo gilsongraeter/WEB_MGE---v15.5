@@ -23,15 +23,16 @@ namespace WEB_MGE
             for (int x = 0; x < 2; x++)
             {
                 System.Threading.Thread.Sleep(250);
-                oPing = new Ping().Send("192.168.0.29", 5000);
+                oPing = new Ping().Send("192.168.25.253", 5000);
 
                 if (oPing.Status == IPStatus.Success)
                 {
                     // Encontrou servidor
                     // Falta conferir o nome
-                    IPHostEntry ipHost = Dns.GetHostEntry("192.168.0.29");
+                    IPHostEntry ipHost = Dns.GetHostEntry("192.168.25.253");
+                    Console.Write("IP = " + ipHost.ToString());
                     string hostNome = ipHost.HostName;
-                    if ((hostNome.Contains("SERVER2012")) || (hostNome.Contains("mgers")))
+                    if ((hostNome.Contains("APPS01")) || (hostNome.Contains("Mgers")))
                     {
                         // Encontrou o servidor
                         Variaveis_Globais.Servidor = true;
@@ -68,7 +69,7 @@ namespace WEB_MGE
         protected void btnEnviar_Click(object sender, EventArgs e)
         {
             Variaveis_Globais.DiretorioRaiz = Server.MapPath("~/");
-            string NomeArquivo = Variaveis_Globais.DiretorioRaiz + "\\dados\\Conexoes.txt";
+            string NomeArquivo = Variaveis_Globais.DiretorioRaiz + "dados\\Conexoes.txt";
                     
 
             System.IO.TextWriter arquivo = null;
@@ -87,13 +88,18 @@ namespace WEB_MGE
 
             //Variaveis_Globais.Host = GetPublicIP();
             Variaveis_Globais.Host = getEnderecoIP();
-            if(Variaveis_Globais.Host == "::1")
+            arquivo.WriteLine("Host = " + Variaveis_Globais.Host + "\n");
+            if (Variaveis_Globais.Host == "::1")
             {
                 Variaveis_Globais.Host = "LOCAL";
             }
 
-            adapter = new MySqlDataAdapter(string.Format("SELECT * FROM USUARIOS WHERE usuario = '{0}' AND senha = '{1}';", tbUsuario.Text, tbSenha.Text), conexao);
+            string ComandoSql = string.Format("SELECT * FROM USUARIOS WHERE usuario = '{0}' AND senha = '{1}';", tbUsuario.Text, tbSenha.Text);
+            arquivo.WriteLine("ComandoSql = " + ComandoSql + "\n");
+            arquivo.WriteLine("Conexao = " + conexao.ConnectionString + "\n");
+            adapter = new MySqlDataAdapter(ComandoSql, conexao);
             adapter.Fill(dataSet);
+            arquivo.WriteLine("Qtd dados lidos = " + dataSet.Tables[0].Rows.Count.ToString() + "\n");
 
             //Variaveis_Globais.TrocaProjeto = false;
 
@@ -104,6 +110,7 @@ namespace WEB_MGE
                     Session["usuarioConectado"] = dataSet.Tables[0].Rows[0]["usuario"].ToString();
                     Variaveis_Globais.Usuario = dataSet.Tables[0].Rows[0]["usuario"].ToString();
                     Variaveis_Globais.PerfilUsuario = dataSet.Tables[0].Rows[0]["perfil"].ToString();
+                    arquivo.WriteLine("Perfil Usuario = " + Variaveis_Globais.PerfilUsuario + "\n");
                     Session["senhaConectado"] = dataSet.Tables[0].Rows[0]["senha"].ToString();
                     Session["projetoConectado"] = dataSet.Tables[0].Rows[0]["projeto"].ToString();
                     Variaveis_Globais.ProjetoAtual = Session["projetoConectado"].ToString();
@@ -121,7 +128,8 @@ namespace WEB_MGE
                     //
                     //Variaveis_Globais.UltimoProjeto = Variaveis_Globais.ProjetoAtual;
 
-                    string NomeArquivoAux = Variaveis_Globais.DiretorioRaiz + "\\dados\\" + Variaveis_Globais.Host + ".txt";
+                    string NomeArquivoAux = Variaveis_Globais.DiretorioRaiz + "dados\\" + Variaveis_Globais.Host + ".txt";
+                    arquivo.WriteLine("Arquivo = " + NomeArquivoAux + "\n");
 
                     System.IO.TextWriter arquivoAux = null;
 

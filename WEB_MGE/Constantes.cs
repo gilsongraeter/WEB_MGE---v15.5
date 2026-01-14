@@ -3,29 +3,29 @@
     public class Constantes
     {
         // Constantes para acesso ao Banco de Dados da aplicação
-        public const string ENDERECO_SERVIDOR_LOCAL   = "192.168.0.29";
-        public const string ENDERECO_SERVIDOR   = "mgers.dyndns.org";
-        public const string DATABASE            = "DB_WEBMGE";
-        public const string USUARIO_DATABASE    = "SYSDBA";
-        public const string SENHA_DATABASE      = "masterkey";
+        public const string ENDERECO_SERVIDOR_LOCAL   = "APPS01";
+        public const string ENDERECO_SERVIDOR   = "APPS01";
+        public const string DATABASE            = "db_webmge";
+        public const string USUARIO_DATABASE    = "SGE";
+        public const string SENHA_DATABASE      = "Xyzmge123";
         public const string STRING_CONEXAO      = ("server=" + ENDERECO_SERVIDOR + 
-                                                    "; User Id=" + USUARIO_DATABASE + 
+                                                    "; port= 1235; User Id=" + USUARIO_DATABASE + 
                                                     "; database=" + DATABASE + 
                                                     "; password=" + SENHA_DATABASE );
 
-        public const string STRING_CONEXAO_LOCAL = ("server=192.168.0.29" +  
-                                                    "; User Id=" + USUARIO_DATABASE +
+        public const string STRING_CONEXAO_LOCAL = ("server=" + ENDERECO_SERVIDOR_LOCAL +  
+                                                    "; port= 1235; User Id=" + USUARIO_DATABASE +
                                                     "; database=" + DATABASE +
                                                     "; password=" + SENHA_DATABASE);
 
         public const string DATABASE_TB_PAINEL = "GERAL_SGE";
         public const string STRING_CONEXAO_TB_PAINEL = ("server=" + ENDERECO_SERVIDOR +
-                                                        "; User Id=" + USUARIO_DATABASE +
+                                                        "; port= 1235; User Id=" + USUARIO_DATABASE +
                                                         "; database=" + DATABASE_TB_PAINEL +
                                                         "; password=" + SENHA_DATABASE);
 
-        public const string STRING_CONEXAO_TB_PAINEL_LOCAL = ("server=192.168.0.29" +
-                                                        "; User Id=" + USUARIO_DATABASE +
+        public const string STRING_CONEXAO_TB_PAINEL_LOCAL = ("server=" + ENDERECO_SERVIDOR +
+                                                        "; port= 1235; User Id=" + USUARIO_DATABASE +
                                                         "; database=" + DATABASE_TB_PAINEL +
                                                         "; password=" + SENHA_DATABASE);
         public const string PROJETO = "projeto";

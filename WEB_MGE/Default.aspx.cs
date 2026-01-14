@@ -75,10 +75,51 @@ namespace WEB_MGE
                     break;
                 case "EDPSP2022TR":
                     Response.Redirect("https://app.powerbi.com/view?r=eyJrIjoiNDgyYTUzOTUtODkzZC00NjFkLThmYzUtNGM5YTcwZTdlZTdjIiwidCI6IjdhZTk4ZGE2LTYyZTgtNDE0OC04MDlhLTUwYzA0ZWFhMzFhYiJ9&pageName=ReportSection4c38b84a2631095de9a9");
-                    break;                
+                    break;
+                case "PIAUI2022":
+                    Response.Redirect("https://app.powerbi.com/view?r=eyJrIjoiODIwMDAxMzYtYWI1Zi00Nzc2LTk4NDEtMmEzZThhZGJlYmYzIiwidCI6ImMyM2Q5YTYzLThhZjItNDY3ZS1iMTI5LTU0Y2YzMGYzODlmOSJ9");
+                    break;
+                case "AME2022":
+                    Response.Redirect("https://app.powerbi.com/groups/me/reports/99082011-26a2-4196-ad29-c7d6dd07dabe?ctid=c23d9a63-8af2-467e-b129-54cf30f389f9&pbi_source=linkShare");
+                    break;
+                case "EDPCM2022":
+                    Response.Redirect("https://app.powerbi.com/view?r=eyJrIjoiMTAwZjYyM2ItYjk5OS00Y2EyLTg2NDMtOTJhNzVhMDUwY2RkIiwidCI6ImMyM2Q5YTYzLThhZjItNDY3ZS1iMTI5LTU0Y2YzMGYzODlmOSJ9");
+                    break;
+                case "RORAIMACM2022":
+                    Response.Redirect("https://app.powerbi.com/view?r=eyJrIjoiZmM5YjZhNjQtYTUxZC00YjliLTliMzctZGRlNTQwY2FiNDI0IiwidCI6ImMyM2Q5YTYzLThhZjItNDY3ZS1iMTI5LTU0Y2YzMGYzODlmOSJ9");
+                    break;
+                case "EMT2022":
+                    Response.Redirect("https://mgers-my.sharepoint.com/personal/cesar_starmeasure_com_br/_layouts/15/AccessDenied.aspx?Source=https%3A%2F%2Fmgers%2Dmy%2Esharepoint%2Ecom%2Fpersonal%2Fcesar%5Fstarmeasure%5Fcom%5Fbr%2FDocuments%2FArquivos%20de%20Chat%20do%20Microsoft%20Teams%2FServi%C3%A7os%5FEMT2022%2Epbix&correlation=91c538a1%2Dd0a7%2D5000%2Db0c0%2D23471dc8a1d2&Type=item&name=5f49a498%2D22a6%2D46e0%2D80b1%2D34df21034aec&listItemId=17710&listItemUniqueId=b4902484%2D622e%2D46c9%2Dacc3%2D70d04c3e22fb");
+                    break;
+                case "CMETO2024":
+                    Response.Redirect("https://app.powerbi.com/view?r=eyJrIjoiYjMxYzYzYWYtYjhhYi00YWYwLWJlNDItNjA1MTBlM2YyZWMxIiwidCI6ImMyM2Q5YTYzLThhZjItNDY3ZS1iMTI5LTU0Y2YzMGYzODlmOSJ9");
+                    break;
+                case "CMEPB2024":
+                    Response.Redirect("https://app.powerbi.com/view?r=eyJrIjoiYjMxYzYzYWYtYjhhYi00YWYwLWJlNDItNjA1MTBlM2YyZWMxIiwidCI6ImMyM2Q5YTYzLThhZjItNDY3ZS1iMTI5LTU0Y2YzMGYzODlmOSJ9");
+                    break;
+                case "CMESS2025":
+                    Response.Redirect("https://app.powerbi.com/reportEmbed?reportId=58ff3ba8-895c-4d08-977e-8e81cf922f4a&autoAuth=true&ctid=c23d9a63-8af2-467e-b129-54cf30f389f9");
+                    break;
+                case "CMEMR2025":
+                    Response.Redirect("https://app.powerbi.com/reportEmbed?reportId=58ff3ba8-895c-4d08-977e-8e81cf922f4a&autoAuth=true&ctid=c23d9a63-8af2-467e-b129-54cf30f389f9");
+                    break;
+                case "CMNEO2025": 
+                    Response.Redirect("https://app.powerbi.com/reportEmbed?reportId=bd49528d-783e-4c72-8976-3bcb850da39f&autoAuth=true&ctid=c23d9a63-8af2-467e-b129-54cf30f389f9");
+                    break;
+                case "NEODF2025":
+                    Response.Redirect("https://app.powerbi.com/reportEmbed?reportId=6f655cbe-db45-4e9e-b959-1b3303ef3547&autoAuth=true&ctid=c23d9a63-8af2-467e-b129-54cf30f389f9");
+                    break;
+                case "CMCPFLPIRATININGA2025":
+                    Response.Redirect("https://app.powerbi.com/view?r=eyJrIjoiMzc5ODFjZWQtNWQ1Mi00Yzc3LWIwZmYtYjZkMzdiMjk5Zjc0IiwidCI6ImMyM2Q5YTYzLThhZjItNDY3ZS1iMTI5LTU0Y2YzMGYzODlmOSJ9");
+                    break;
+                case "LIGHT2025":
+                    Response.Redirect("https://app.powerbi.com/view?r=eyJrIjoiNzhhZWFhYzMtNjI5ZC00ZTUzLWE3MzEtODMyNzBjZDE0Mjg3IiwidCI6ImMyM2Q5YTYzLThhZjItNDY3ZS1iMTI5LTU0Y2YzMGYzODlmOSJ9");
+                    break;
+                case "EQTLAP2025":
+                    Response.Redirect("https://app.powerbi.com/view?r=eyJrIjoiMGYwNzhjOTQtYWQ3Ni00NzFhLTlkODItMGI5MDQ4MjI1NDU1IiwidCI6ImMyM2Q5YTYzLThhZjItNDY3ZS1iMTI5LTU0Y2YzMGYzODlmOSJ9");
+                    break;
                 default:
                     break;
-
             }
 
             //Response.Redirect("https://app.powerbi.com/reportEmbed?reportId=a4c6f0c5-fd3f-4587-a511-195afd4595bb&autoAuth=true&ctid=7ae98da6-62e8-4148-809a-50c04eaa31ab&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLWJyYXppbC1zb3V0aC1iLXByaW1hcnktcmVkaXJlY3QuYW5hbHlzaXMud2luZG93cy5uZXQvIn0%3D");
